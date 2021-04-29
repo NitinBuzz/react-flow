@@ -6,5 +6,5 @@ $ yarn install
 ## serve with hot reload
 $ yarn start
 
-## build for production and launch server
+## build for production
 $ yarn build
