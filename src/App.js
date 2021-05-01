@@ -5,12 +5,10 @@ import ReactFlow, {
   addEdge,
 } from "react-flow-renderer";
 
-import { getElements } from "./utils";
 import { GraphData } from "./graphData";
 
 const onLoad = (reactFlowInstance) => {
   reactFlowInstance.fitView();
-  // console.log(reactFlowInstance.getElements());
 };
 
 export default function App() {
@@ -23,8 +21,7 @@ export default function App() {
       .then((res) => res.json())
       .then((data) => {
         const graphMap = GraphData.restructureJsonSchema(JSON.stringify(data));
-        let initialElements = getElements();
-        initialElements = graphMap["nodeMetrics"]["flow-chart"];
+        let initialElements = graphMap["nodeMetrics"]["flow-chart"];
         setElements(initialElements);
       })
       .catch(e => console.log(e))
